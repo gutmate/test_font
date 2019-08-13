@@ -1,4 +1,5 @@
-var dayMsg = [{
+var dayMsg = [
+    {
         msg: '너 자신을 알라.',
         name: '소크라테스'
     },
@@ -24,7 +25,8 @@ var dayMsg = [{
  * @name {string} @font-face에 지정한 폰트 이름과 일치
  * @fontWeight {array} @font-face에 지정한 폰트 굵기
  */
-var fontData = [{
+var fontData = [
+    {
         name: 'NanumWeb',
         fontWeight: [400, 600]
     },
@@ -54,7 +56,7 @@ var font = {
             var elFamily = el.name;
             var elWeight = el.fontWeight;
             var _l = elWeight.length;
-            var word = '삶은 호흡하는 것이 아니라 행위를 하는 것이다. - TEST - test';
+            var word = '삶은 호흡하는 것이 아니라 행위를 하는 것이다. - To live is not to breathe but to act.';
 
             _temp_dep2 = []; // 초기화
             _temp_dep2.push('<div class="font-wrap" style="font-family: ' + elFamily + '">');

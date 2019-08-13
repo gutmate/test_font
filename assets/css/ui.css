@@ -5,7 +5,6 @@
   font-family: NanumWeb;
   font-weight: 400;
   font-style: normal;
-  src: url('../font/NanumGothic-Regular.eot');
   src: url('../font/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
        url('../font/NanumGothic-Regular.ttf') format('truetype');
 }
@@ -13,7 +12,6 @@
   font-family: NanumWeb;
   font-weight: 600;
   font-style: normal;
-  src: url('../font/NanumGothic-Bold.eot');
   src: url('../font/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
        url('../font/NanumGothic-Bold.ttf') format('truetype');
 }
@@ -223,6 +221,12 @@ input:-moz-placeholder {
 }
 
 /* font layout */
+.btn-wrap button {
+    font-size: 20px;
+}
+.btn-wrap+.font-wrap {
+    margin-top: 10px;
+}
 .font-wrap+.font-wrap {
     margin-top: 20px;
 }
