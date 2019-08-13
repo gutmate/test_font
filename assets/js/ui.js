@@ -40,34 +40,6 @@ var fontData = [
 ];
 
 var font = {
-    getCssInfo: function (element, property) {
-        return window.getComputedStyle(element, null).getPropertyValue(property);
-    },
-    getFontInfo: function (element) {
-        var objStyle = window.getComputedStyle(element, null);
-        var _info = {};
-        _info.fontFamily = objStyle.getPropertyValue('font-family');
-        _info.fontWeight = objStyle.getPropertyValue('font-weight');
-        _info.fontSize = objStyle.getPropertyValue('font-size');
-
-        return _info;
-    },
-    renderInfo: function (element) {
-        var list = document.querySelectorAll(element);
-        var listLength = list.length;
-        var _tmp, tag, text;
-
-        for (var idx = 0; idx < listLength; idx++) {
-            var el = list[idx];
-            _tmp = this.getFontInfo(el);
-
-            tag = document.createElement('p');
-            tag.classList.add('qt');
-            text = document.createTextNode('(' + _tmp.fontFamily + ', ' + _tmp.fontWeight + ', ' + _tmp.fontSize + ')');
-            tag.appendChild(text);
-            el.appendChild(tag);
-        }
-    },
     renderList: function (target) {
         var _target = document.getElementById(target); // render 대상
         var _family = fontData;
