@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+/* NotoSans */
+@font-face {
+    font-family: NotoSansKRWeb;
+    font-weight: 100;
+    font-style: normal;
+    src: url('../font/NotoSansCJKkr-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../font/NotoSansCJKkr-Thin.woff2') format('woff2'),
+        url('../font/NotoSansCJKkr-Thin.woff') format('woff')
+}
+@font-face {
+    font-family: NotoSansKRWeb;
+    font-weight: 300;
+    font-style: normal;
+    src: url('../font/NotoSansCJKkr-Light.eot?#iefix') format('embedded-opentype'),
+        url('../font/NotoSansCJKkr-Light.woff2') format('woff2'),
+        url('../font/NotoSansCJKkr-Light.woff') format('woff');
+    }
+@font-face {
+    font-family: NotoSansKRWeb;
+    font-weight: 350;
+    font-style: normal;
+    src: url('../font/NotoSansCJKkr-DemiLight.eot?#iefix') format('embedded-opentype'),
+        url('../font/NotoSansCJKkr-DemiLight.woff2') format('woff2'),
+        url('../font/NotoSansCJKkr-DemiLight.woff') format('woff');
+    }
+@font-face {
+    font-family: NotoSansKRWeb;
+    font-weight: 400;
+    font-style: normal;
+    src: url('../font/NotoSansCJKkr-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../font/NotoSansCJKkr-Regular.woff2') format('woff2'),
+        url('../font/NotoSansCJKkr-Regular.woff') format('woff');
+    }
+@font-face {
+    font-family: NotoSansKRWeb;
+    font-weight: 500;
+    font-style: normal;
+    src: url('../font/NotoSansCJKkr-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../font/NotoSansCJKkr-Medium.woff2') format('woff2'),
+        url('../font/NotoSansCJKkr-Medium.woff') format('woff');
+    }
+@font-face {
+    font-family: NotoSansKRWeb;
+    font-weight: 600;
+    font-style: normal;
+    src: url('../font/NotoSansCJKkr-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../font/NotoSansCJKkr-Bold.woff2') format('woff2'),
+        url('../font/NotoSansCJKkr-Bold.woff') format('woff');
+    }
+@font-face {
+    font-family: NotoSansKRWeb;
+    font-weight: 900;
+    font-style: normal;
+    src: url('../font/NotoSansCJKkr-Black.eot?#iefix') format('embedded-opentype'),
+        url('../font/NotoSansCJKkr-Black.woff2') format('woff2'),
+        url('../font/NotoSansCJKkr-Black.woff') format('woff')
+}
+
+/* reset */
+html {
+    -webkit-text-size-adjust: none
+}
+body {
+    font-family: gulim, dotum;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    word-break: keep-all;
+    color: #666
+}
+body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, form, fieldset, input, table, tr, th, td, a, span, button, textarea, nav, section, aside, article {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #444;
+    line-height: 1;
+}
+ul, ol, li {
+    list-style: none
+}
+hr {
+    position: absolute;
+    left: -1000%;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden
+}
+fieldset {
+    border: none
+}
+a {
+    text-decoration: none;
+    color: #666
+}
+a:hover, a:active, a:visited {
+    text-decoration: none;
+}
+img {
+    border: 0;
+    vertical-align: top
+}
+button, input, select, textarea {
+    vertical-align: middle;
+    font-family: inherit
+}
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: left;
+    color: #666
+}
+input[type=text], input[type=search], input[type=password] {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box
+}
+select {
+    color: #777;
+    box-sizing: border-box;
+    border-radius: 0
+}
+textarea {
+    resize: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+em, address {
+    font-style: normal
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+label {
+    vertical-align: middle;
+    cursor: pointer
+}
+strong {
+    font-weight: 600;
+    color: #333;
+}
+sup {
+    font-size: 10px;
+}
+mark {
+    background-color: #fff
+}
+::-webkit-input-placeholder {
+    font-size: 13px;
+    color: #777
+}
+::-moz-placeholder {
+    font-size: 13px;
+    color: #777
+}
+:-ms-input-placeholder {
+    font-size: 13px;
+    color: #777
+}
+input:-moz-placeholder {
+    font-size: 13px;
+    color: #777
+}
+
+.content {
+    padding-top: 50px;
+}
+.layout {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+[class^="font-type"] {
+    margin-top: 20px;
+}
+[class^="font-type"]>li {
+    margin-top: 7px;
+}
+[class^="font-type"]>li:first-child {
+    margin-top: 0;
+}
+[class^="font-type"] .qt {
+    font-size: 13px;
+    font-weight: 400;
+    color: steelblue;
+}
+.font-type-a {
+    font-family: 'NotoSansKRWeb';
+    font-size: 20px;
+    color: #000;
+}
+.font-type-b {
+    font-family: 'dotum';
+    font-size: 20px;
+    color: #000;
+}
