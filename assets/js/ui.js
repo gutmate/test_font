@@ -19,19 +19,31 @@ var dayMsg = [{
         name: '모리스'
     }
 ];
-var fontGroup = [
+/**
+ * @var fontData
+ * @name {string} @font-face에 지정한 폰트 이름과 일치
+ * @fontWeight {array} @font-face에 지정한 폰트 굵기
+ */
+var fontData = [
     {
-        name: 'NotoSansCJKkr',
+        name: 'NanumWeb',
+        fontWeight: [400, 600]
+    },
+    {
+        name: 'NotoSansKRWeb',
         fontWeight: [100, 300, 350, 400, 500, 600, 900]
+    },
+    {
+        name: 'RouisWeb',
+        fontWeight: [400, 600]
     }
 ];
 
-
 var font = {
-    getCssInfo(element, property) {
+    getCssInfo: function (element, property) {
         return window.getComputedStyle(element, null).getPropertyValue(property);
     },
-    getFontInfo(element) {
+    getFontInfo: function (element) {
         var objStyle = window.getComputedStyle(element, null);
         var _info = {};
         _info.fontFamily = objStyle.getPropertyValue('font-family');
@@ -40,14 +52,14 @@ var font = {
 
         return _info;
     },
-    renderInfo(element) {
+    renderInfo: function (element) {
         var list = document.querySelectorAll(element);
         var listLength = list.length;
         var _tmp, tag, text;
 
         for (var idx = 0; idx < listLength; idx++) {
             var el = list[idx];
-            _tmp = getFontInfo(el);
+            _tmp = this.getFontInfo(el);
 
             tag = document.createElement('p');
             tag.classList.add('qt');
@@ -56,10 +68,47 @@ var font = {
             el.appendChild(tag);
         }
     },
-    renderList() {
+    renderList: function (target) {
+        var _target = document.getElementById(target); // render 대상
+        var _family = fontData;
+        var _length = _family.length;
+        var _temp_dep1 = [];
+        var _temp_dep2 = [];
+        var _fontSize = '18px';
 
+        for (var idx = 0; idx < _length; idx++) {
+            //font family 개수만큼 리스트 생성
+            var el = _family[idx];
+            var elFamily = el.name;
+            var elWeight = el.fontWeight;
+            var _l = elWeight.length;
+            var word = '삶은 호흡하는 것이 아니라 행위를 하는 것이다. - TEST - test';
+
+            _temp_dep2 = []; // 초기화
+            _temp_dep2.push('<div class="font-wrap" style="font-family: ' + elFamily + '">');
+            _temp_dep2.push('    <h2 class="font-name">&lt;' + elFamily +'&gt;</h2>');
+            _temp_dep2.push('    <ul class="font-list">');
+
+            for (var idx2 = 0; idx2 < _l; idx2++) {
+                //font weight 개수만큼 리스트 생성
+                var listFontWeight = elWeight[idx2];
+                var _htmlList = [];
+                _htmlList.push('       <li style="font-weight: ' + listFontWeight + '; font-size: ' + _fontSize +'">' + word + '</li>');
+                _htmlList.push('         <p class="qt">' + elFamily + ', ' + listFontWeight + ', ' + _fontSize + '</p>');
+                _htmlList.push('       </li>');
+                _htmlList = _htmlList.join('\n');
+                _temp_dep2.push(_htmlList);
+            }
+
+            _temp_dep2.push('    </ul><!-- //font-list -->');
+            _temp_dep2.push('</div><!-- //font-wrap -->');
+            _temp_dep2 = _temp_dep2.join('\n');
+            _temp_dep1.push(_temp_dep2);
+        }
+        _temp_dep1 = _temp_dep1.join('\n');
+
+        _target.innerHTML = _temp_dep1;
     }
 };
 
-font.renderInfo('.font-type-a li');
-font.renderInfo('.font-type-b li');
+font.renderList('fontWrap');

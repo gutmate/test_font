@@ -1,5 +1,23 @@
 @charset "utf-8";
 
+/* NanumWeb */
+@font-face {
+  font-family: NanumWeb;
+  font-weight: 400;
+  font-style: normal;
+  src: url('../font/NanumGothic-Regular.eot');
+  src: url('../font/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../font/NanumGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: NanumWeb;
+  font-weight: 600;
+  font-style: normal;
+  src: url('../font/NanumGothic-Bold.eot');
+  src: url('../font/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../font/NanumGothic-Bold.ttf') format('truetype');
+}
+
 /* NotoSans */
 @font-face {
     font-family: NotoSansKRWeb;
@@ -56,6 +74,23 @@
     src: url('../font/NotoSansCJKkr-Black.eot?#iefix') format('embedded-opentype'),
         url('../font/NotoSansCJKkr-Black.woff2') format('woff2'),
         url('../font/NotoSansCJKkr-Black.woff') format('woff')
+}
+
+/* Rouis*/
+@font-face {
+  font-family: RouisWeb;
+  font-weight: 400;
+  font-style: normal;
+  src: url('../font/louis-regular-webfont.woff2') format('woff2'),
+       url('../font/louis-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: RouisWeb;
+  font-weight: 600;
+  font-style: normal;
+  src: url('../font/louis-bold-webfont.woff2') format('woff2'),
+       url('../font/louis-bold-webfont.woff') format('woff');
 }
 
 /* reset */
@@ -177,6 +212,7 @@ input:-moz-placeholder {
     color: #777
 }
 
+/* layout */
 .content {
     padding-top: 50px;
 }
@@ -186,20 +222,29 @@ input:-moz-placeholder {
     margin: 0 auto;
 }
 
-[class^="font-type"] {
+/* font layout */
+.font-wrap+.font-wrap {
     margin-top: 20px;
 }
-[class^="font-type"]>li {
+.font-wrap .font-name {
+    font-weight: 600;
+    font-size: 20px;
+}
+.font-list {
+    margin-top: 5px;
+}
+.font-list>li {
     margin-top: 7px;
 }
-[class^="font-type"]>li:first-child {
+.font-list>li:first-child {
     margin-top: 0;
 }
-[class^="font-type"] .qt {
-    font-size: 13px;
-    font-weight: 400;
+.font-list .qt {
+    font-size: 15px;
+    font-weight: 300;
     color: steelblue;
 }
+/*
 .font-type-a {
     font-family: 'NotoSansKRWeb';
     font-size: 20px;
@@ -209,4 +254,4 @@ input:-moz-placeholder {
     font-family: 'dotum';
     font-size: 20px;
     color: #000;
-}
+} */
