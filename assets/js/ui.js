@@ -24,8 +24,7 @@ var dayMsg = [{
  * @name {string} @font-face에 지정한 폰트 이름과 일치
  * @fontWeight {array} @font-face에 지정한 폰트 굵기
  */
-var fontData = [
-    {
+var fontData = [{
         name: 'NanumWeb',
         fontWeight: [400, 600]
     },
@@ -47,6 +46,7 @@ var font = {
         var _temp_dep1 = [];
         var _temp_dep2 = [];
         var _fontSize = '18px';
+        var _fontColor = '#000';
 
         for (var idx = 0; idx < _length; idx++) {
             //font family 개수만큼 리스트 생성
@@ -58,14 +58,14 @@ var font = {
 
             _temp_dep2 = []; // 초기화
             _temp_dep2.push('<div class="font-wrap" style="font-family: ' + elFamily + '">');
-            _temp_dep2.push('    <h2 class="font-name">&lt;' + elFamily +'&gt;</h2>');
+            _temp_dep2.push('    <h2 class="font-name">&lt;' + elFamily + '&gt;</h2>');
             _temp_dep2.push('    <ul class="font-list">');
 
             for (var idx2 = 0; idx2 < _l; idx2++) {
                 //font weight 개수만큼 리스트 생성
                 var listFontWeight = elWeight[idx2];
                 var _htmlList = [];
-                _htmlList.push('       <li style="font-weight: ' + listFontWeight + '; font-size: ' + _fontSize +'">' + word + '</li>');
+                _htmlList.push('       <li style="font-weight: ' + listFontWeight + '; font-size: ' + _fontSize + '; color: ' + _fontColor + '">' + word + '</li>');
                 _htmlList.push('         <p class="qt">' + elFamily + ', ' + listFontWeight + ', ' + _fontSize + '</p>');
                 _htmlList.push('       </li>');
                 _htmlList = _htmlList.join('\n');
